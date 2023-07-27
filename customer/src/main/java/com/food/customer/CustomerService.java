@@ -1,8 +1,7 @@
-package com.amigoscode.customer;
+package com.food.customer;
 
-import com.amigoscode.amqp.RabbitMQMessageProducer;
-import com.amigoscode.clients.notification.NotificationClient;
-import com.amigoscode.clients.notification.NotificationRequest;
+import com.food.amqp.RabbitMQMessageProducer;
+import com.food.clients.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

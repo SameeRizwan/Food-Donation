@@ -1,4 +1,4 @@
-package com.amigoscode.customer;
+package com.food.customer;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

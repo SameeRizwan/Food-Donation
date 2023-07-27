@@ -1,4 +1,4 @@
-package com.amigoscode.clients.notification;
+package com.food.clients.notification;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;

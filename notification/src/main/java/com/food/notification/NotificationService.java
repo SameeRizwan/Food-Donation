@@ -1,6 +1,6 @@
-package com.amigoscode.notification;
+package com.food.notification;
 
-import com.amigoscode.clients.notification.NotificationRequest;
+import com.food.clients.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
