@@ -1,14 +1,14 @@
 package com.food.donor;
 
+import com.food.donor.annotation.EmailNotValidException;
 import com.food.donor.dto.DonorRegistrationRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.ws.rs.core.Response;
 
 @Slf4j
 @RestController
@@ -19,8 +19,12 @@ public class DonorController {
     private final DonorService donorService;
 
     @PostMapping
-    public void registerCustomer(@Valid @RequestBody DonorRegistrationRequest customerRegistrationRequest) {
-        log.info("new Donor registration {}", customerRegistrationRequest);
-        donorService.registerDonor(customerRegistrationRequest);
+    public ResponseEntity registerCustomer(@Valid @RequestBody DonorRegistrationRequest customerRegistrationRequest) {
+        try {
+            log.info("new Donor registration {}", customerRegistrationRequest);
+            return ResponseEntity.ok(donorService.registerDonor(customerRegistrationRequest));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }
