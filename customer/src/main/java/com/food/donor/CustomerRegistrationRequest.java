@@ -1,4 +1,4 @@
-package com.food.customer;
+package com.food.donor;
 
 public record CustomerRegistrationRequest(
         String firstName,

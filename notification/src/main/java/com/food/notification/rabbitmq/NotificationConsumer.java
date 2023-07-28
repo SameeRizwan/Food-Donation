@@ -1,5 +1,6 @@
 package com.food.notification.rabbitmq;
 
+import com.food.clients.notification.DonorNotificationRequest;
 import com.food.clients.notification.NotificationRequest;
 import com.food.notification.NotificationService;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,7 @@ public class NotificationConsumer {
     private final NotificationService notificationService;
 
     @RabbitListener(queues = "${rabbitmq.queues.notification}")
-    public void consumer(NotificationRequest notificationRequest) {
+    public void consumer(DonorNotificationRequest notificationRequest) {
         log.info("Consumed {} from queue", notificationRequest);
         notificationService.send(notificationRequest);
     }

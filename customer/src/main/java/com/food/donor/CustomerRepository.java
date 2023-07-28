@@ -1,4 +1,4 @@
-package com.food.customer;
+package com.food.donor;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

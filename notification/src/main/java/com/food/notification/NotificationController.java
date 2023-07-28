@@ -1,5 +1,6 @@
 package com.food.notification;
 
+import com.food.clients.notification.DonorNotificationRequest;
 import com.food.clients.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +18,7 @@ public class NotificationController {
     private final NotificationService notificationService;
 
     @PostMapping
-    public void sendNotification(@RequestBody NotificationRequest notificationRequest) {
+    public void sendNotification(@RequestBody DonorNotificationRequest notificationRequest) {
         log.info("New notification... {}", notificationRequest);
         notificationService.send(notificationRequest);
     }

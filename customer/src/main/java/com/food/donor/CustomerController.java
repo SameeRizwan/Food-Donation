@@ -1,4 +1,4 @@
-package com.food.customer;
+package com.food.donor;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

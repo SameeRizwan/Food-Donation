@@ -1,4 +1,4 @@
-package com.food.customer;
+package com.food.donor;
 
 import com.food.amqp.RabbitMQMessageProducer;
 import com.food.clients.notification.NotificationRequest;

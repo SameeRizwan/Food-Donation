@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class Notification {
+public class DonorNotification {
 
     @Id
     @SequenceGenerator(
@@ -29,8 +29,8 @@ public class Notification {
             generator = "notification_id_sequence"
     )
     private Integer notificationId;
-    private Integer toCustomerId;
-    private String toCustomerEmail;
+    private Integer fromDonorId;
+    private String fromDonorName;
     private String sender;
     private String message;
     private LocalDateTime sentAt;

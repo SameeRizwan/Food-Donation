@@ -1,5 +1,6 @@
 package com.food.notification;
 
+import com.food.clients.notification.DonorNotificationRequest;
 import com.food.clients.notification.NotificationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,12 +13,12 @@ public class NotificationService {
 
     private final NotificationRepository notificationRepository;
 
-    public void send(NotificationRequest notificationRequest) {
+    public void send(DonorNotificationRequest notificationRequest) {
         notificationRepository.save(
-                Notification.builder()
-                        .toCustomerId(notificationRequest.toCustomerId())
-                        .toCustomerEmail(notificationRequest.toCustomerName())
-                        .sender("Amigoscode")
+                DonorNotification.builder()
+                        .fromDonorId(notificationRequest.donorId())
+                        .fromDonorName(notificationRequest.donorName())
+                        .sender("DONOR")
                         .message(notificationRequest.message())
                         .sentAt(LocalDateTime.now())
                         .build()
