@@ -10,17 +10,17 @@ import javax.validation.Valid;
 
 @Slf4j
 @RestController
-@RequestMapping("api/v1/donor")
+@RequestMapping("api/v1/recipient")
 @AllArgsConstructor
 public class RecipientController {
 
-    private final RecipientService donorService;
+    private final RecipientService recipientService;
 
     @PostMapping
-    public ResponseEntity registerCustomer(@Valid @RequestBody RecipientRegistrationRequest customerRegistrationRequest) {
+    public ResponseEntity registerRecipient(@Valid @RequestBody RecipientRegistrationRequest recipientRegistrationRequest) {
         try {
-            log.info("new Donor registration {}", customerRegistrationRequest);
-            return ResponseEntity.ok(donorService.registerDonor(customerRegistrationRequest));
+            log.info("new Recipient registration {}", recipientRegistrationRequest);
+            return ResponseEntity.ok(recipientService.registerRecipient(recipientRegistrationRequest));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }

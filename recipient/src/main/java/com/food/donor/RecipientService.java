@@ -19,7 +19,7 @@ public class RecipientService {
     private final RecipientRepository recipientRepository;
     private final RabbitMQMessageProducer rabbitMQMessageProducer;
 
-    public Recipient registerDonor(RecipientRegistrationRequest request) throws Exception {
+    public Recipient registerRecipient(RecipientRegistrationRequest request) throws Exception {
         try {
             Recipient recipient = Recipient.builder()
                     .fullName(request.fullName())
