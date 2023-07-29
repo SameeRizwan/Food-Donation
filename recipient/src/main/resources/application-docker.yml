@@ -2,10 +2,10 @@ server:
     port: 8080
 spring:
     application:
-        name: donor
+        name: recipient
     datasource:
         password: password
-        url: jdbc:postgresql://postgres:5432/donor
+        url: jdbc:postgresql://postgres:5432/recipient
         username: root
     jpa:
         hibernate:
