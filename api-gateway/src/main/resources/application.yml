@@ -17,6 +17,10 @@ spring:
               uri: lb://DONOR
               predicates:
                 - Path=/api/v1/donor/**
+            - id: recipient
+              uri: lb://RECIPIENT
+              predicates:
+                - Path=/api/v1/recipient/**
 
 eureka:
     client:
